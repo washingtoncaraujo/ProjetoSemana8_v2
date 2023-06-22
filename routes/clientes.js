@@ -20,9 +20,7 @@ router.put('/', nomeMiddleware.validateName,
     sobrenomeMiddleware.validateFamilyName,
     idadeMiddleware.validateAge, clienteController.update);
 /* DELETE clientes*/
-router.delete('/:id', nomeMiddleware.validateName,
-    sobrenomeMiddleware.validateFamilyName,
-    idadeMiddleware.validateAge, clienteController.remove);
+router.delete('/:id', clienteController.remove);
 
 module.exports = router;
 
