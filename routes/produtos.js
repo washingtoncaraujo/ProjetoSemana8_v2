@@ -1,22 +1,15 @@
 /* eslint-disable linebreak-style */
-// importando o express
 const express = require('express');
 const router = express.Router();
-/* GET produtos*/
-router.get('/', function (req, res, next) {
-  res.send('GET produtos');
-});
-/* POST produtos*/
-router.post('/', function (req, res, next) {
-  res.send('POST produtos');
-});
-/* PUT produtos*/
-router.put('/', function (req, res, next) {
-  res.send('PUT produtos');
-});
-/* DELETE produtos*/
-router.delete('/', function (req, res, next) {
-  res.send('DELETE produtos');
-});
+const clienteController = require('../controllers/produtoControllers');
+
+/* GET clientes*/
+router.get('/', clienteController.findAll);
+/* POST clientes*/
+router.post('/', clienteController.save);
+/* PUT clientes*/
+router.put('/', clienteController.update);
+/* DELETE clientes*/
+router.delete('/:id', clienteController.remove);
 
 module.exports = router;

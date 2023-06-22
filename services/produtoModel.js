@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
-const connection = require('../configs/dbConfiguration');
+const connection = require('../configs/dbConfigurations');
 const findAll = async () => {
   const produtos = await (await connection)
       .execute('SELECT * FROM produtos');
