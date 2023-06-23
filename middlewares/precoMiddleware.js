@@ -5,13 +5,13 @@
 // Executa a validação da data
 const validatePreco = (request, response, next) => {
     const { body } = request;
-    if (body.validatePreco == undefined || body.validatePreco === '') {
+    if (body.preco == undefined || body.preco === '') {
         return response.status(400)
-            .json({ message: 'O campo "validatePreco" é obrigatório' });
+            .json({ message: 'O campo "Preco" é obrigatório' });
     }
-    if (isNaN(parseFloat(body.validatePreco)) || parseFloat(body.validatePreco) < 0) {
+    if (isNaN(parseFloat(body.preco)) || parseFloat(body.preco) < 0) {
         return response.status(400)
-            .json({ message: 'O campo "validatePreco" deve ser inteiro positivo e valor possível' });
+            .json({ message: 'O campo "Preco" deve ser positivo e valor possível' });
     }
     next();
 };
